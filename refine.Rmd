@@ -85,8 +85,7 @@ You'd like to view the customer information on a map. In order to do that, the a
 
 refine <- add_column(refine, full_address = , .after = 4)
 refine <- unite(refine, full_address, c(address, city, country), sep = ", ", remove=FALSE)
-drop.cols <- c('address', 'city', 'country')
-refine %>% select(-one_of(drop.cols))
+refine <- refine[-c(5:7)]
 
 ```
 
