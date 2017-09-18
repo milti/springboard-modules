@@ -100,4 +100,7 @@ titanic$has_cabin_number <- ifelse(is.na(titanic$cabin), 0, 1)
 Include your code, the original data as a CSV file titanic_original.csv, and the cleaned up data as a CSV file called titanic_clean.csv.
 SUBMIT YOUR PROJECT.
 
+```{r, eval=FALSE}
+write.csv(titanic, "~/R/github/springboard\ exercises/springboard\ exercises/titanic_clean.csv")
+```
 
