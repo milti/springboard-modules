@@ -109,6 +109,12 @@ for(p in unique(refine$product_code)) {
     refine[paste("product",tolower(p),sep="_")] <- ifelse(refine$product_code==p,1,0) 
 }
 
-#add_column(refine, product_smartphone, product_tv, product_laptop, product_tablet, .after = 2)
-#add_column(refine, company_philips, company_akzo, company_van_houten, company_unilever, .after = 1)
+```
+
+## 6: Submit the project on Github
+
+Include your code, the original data as a CSV file refine_original.csv, and the cleaned up data as a CSV file called refine_clean.csv.
+```{r, eval=FALSE}
+
+write.csv(refine, "~/R/github/springboard\ exercises/springboard\ exercises/refine_clean.csv")
 ```
