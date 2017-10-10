@@ -121,6 +121,7 @@ methods(class = class(sat.mod))[1:9]
 confint(sat.mod)
 hist(residuals(sat.mod))
 
+
 ```
 
 
