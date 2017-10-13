@@ -10,15 +10,15 @@ output:
 ---
 
 #  Introduction
-## ══════════════
+══════════════
 
-#   • Learning objectives:
+     • Learning objectives:
      • Learn the R formula interface
      • Specify factor contrasts to test specific hypotheses
      • Perform model comparisons
      • Run and interpret variety of regression models in R
 
-## Set working directory
+# Set working directory
  ─────────────────────────
 
    It is often helpful to start your R session by setting your working
@@ -47,7 +47,7 @@ tail(states.info, 8)
 
 
 
-## Linear regression
+# Linear regression
  ═══════════════════
 
  Examine the data before fitting models
@@ -79,8 +79,8 @@ plot(sts.ex.sat)
 ## Linear regression example
  ─────────────────────────────
 
-   • Linear regression models can be fit with the `lm()' function
-   • For example, we can use `lm' to predict SAT scores based on per-pupal expenditures:
+     • Linear regression models can be fit with the `lm()' function
+     • For example, we can use `lm' to predict SAT scores based on per-pupal expenditures: 
 ```{r}
 # Fit our regression model
 sat.mod <- lm(csat ~ expense, # regression formula
@@ -159,7 +159,7 @@ coef(summary(sat.voting.mod))
 ```
 
 
-## Exercise: least squares regression
+# Exercise: least squares regression
  ────────────────────────────────────────
 
    Use the /states.rds/ data set. Fit a model predicting energy consumed
@@ -294,19 +294,21 @@ coef(summary(lm(csat ~ C(region, contr.helmert),
 ?relevel
 ```
 
-## Exercise: interactions and factors
+# Exercise: interactions and factors
  ────────────────────────────────────────
-```{r, echo=FALSE}
+```{r}
 
 ##   Use the states data set.
 
 ##   1. Add on to the regression equation that you created in exercise 1 by
 ##      generating an interaction term and testing the interaction.
 
+ 
+
 ```
 
 
-```{r, echo=FALSE}
+```{r}
 ##   2. Try adding region to the model. Are there significant differences
 ##      across the four regions?
 ```
