@@ -130,7 +130,7 @@ coef(summary(sat.voting.mod))
 ##   per capita (energy) from the percentage of residents living in
 ##   metropolitan areas (metro). Be sure to
 ##   1. Examine/plot the data before fitting the model
-states <- readRDS("dataSets/states.rds")
+states <- readRDS("linear_regression/dataSets/states.rds")
 states.info <- subset(states, select = c("energy", "metro"))
 str(states)
 str(states.info)
