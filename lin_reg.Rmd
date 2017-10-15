@@ -79,8 +79,8 @@ plot(sts.ex.sat)
 ## Linear regression example
  ─────────────────────────────
 
-     • Linear regression models can be fit with the `lm()' function
-     • For example, we can use `lm' to predict SAT scores based on per-pupal expenditures: 
+     • Linear regression models can be fit with the lm() function
+     • For example, we can use lm to predict SAT scores based on per-pupil expenditures: 
 ```{r}
 # Fit our regression model
 sat.mod <- lm(csat ~ expense, # regression formula
@@ -91,7 +91,7 @@ summary(sat.mod) # show regression coefficients table
 ```
 
 
-## Why is the association between expense and SAT scores /negative/?
+## Why is the association between expense and SAT scores *negative*?
  ─────────────────────────────────────────────────────────────────────
 
    Many people find it surprising that the per-capita expenditure on
@@ -106,7 +106,7 @@ summary(lm(csat ~ expense + percent, data = states.data))
 ```
 
 
-## The lm class and methods
+## The *lm* class and methods
  ────────────────────────────
 
    OK, we fit our model. Now what?
@@ -159,7 +159,7 @@ coef(summary(sat.voting.mod))
 ```
 
 
-# Exercise: least squares regression
+# Exercise 0: least squares regression
  ────────────────────────────────────────
 
    Use the /states.rds/ data set. Fit a model predicting energy consumed
@@ -294,7 +294,7 @@ coef(summary(lm(csat ~ C(region, contr.helmert),
 ?relevel
 ```
 
-# Exercise: interactions and factors
+# Exercise 1: interactions and factors
  ────────────────────────────────────────
 ```{r}
 
