@@ -128,7 +128,7 @@ plot(allEffects(hyp.out))
 
 ##   1. Use glm to conduct a logistic regression to predict ever worked
 ##      (everwrk) using age (age_p) and marital status (r_maritl).
-<<<<<<< HEAD
+
 str(NH11$everwrk) # check stucture of everwrk
 levels(NH11$everwrk) # check levels of everwrk
 # collapse all missing values to NA
@@ -143,13 +143,6 @@ coef(summary(everwrk.out))
 everwrk.out.tab <- coef(summary(everwrk.out))
 everwrk.out.tab[, "Estimate"] <- exp(coef(everwrk.out))
 everwrk.out.tab
-
-##  predDatWrk <- with(NH11,                      #everwrk ~ age_p + r_maritl
-##                    expand.grid(age_p,
-##                    r_maritl[everwrk != NA]))
-=======
-##   2. Predict the probability of working for each level of marital
-##      status.
 
 ##   Note that the data is not perfectly clean and ready to be modeled. You
 ##   will need to clean up at least some of the variables before fitting
@@ -188,5 +181,27 @@ cbind(predDatFltd, predict(everwrk.fltd, type = "response",
 ##9	33	5 Divorced	    0.10389473	0.010093135	
 #10	63	5 Divorced	    0.04586728	0.004509367
 
+##  solution from link
+##   Use glm to conduct a logistic regression to predict ever worked (everwrk) using age 
+##  (agep) and marital status (rmaritl).
+
+nh11.wrk.age.mar <- subset(NH11, select = c("everwrk", "age_p", "r_maritl"))
+summary(nh11.wrk.age.mar)
+NH11 <- transform(NH11,
+                  everwrk = factor(everwrk,
+                      levels = c("1 Yes", "2 No")),
+                  r_maritl = droplevels(r_maritl))
+
+mod.wk.age.mar <- glm(everwrk ~ age_p + r_maritl, data = NH11,
+                      family = "binomial")
+
+summary(mod.wk.age.mar)
+
+##    Predict the probability of working for each level of marital status.
+
+library(effects)
+data.frame(Effect("r_maritl", mod.wk.age.mar))
 ```
 
+
+ 
