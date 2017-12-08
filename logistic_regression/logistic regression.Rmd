@@ -128,6 +128,7 @@ plot(allEffects(hyp.out))
 
 ##   1. Use glm to conduct a logistic regression to predict ever worked
 ##      (everwrk) using age (age_p) and marital status (r_maritl).
+<<<<<<< HEAD
 str(NH11$everwrk) # check stucture of everwrk
 levels(NH11$everwrk) # check levels of everwrk
 # collapse all missing values to NA
@@ -146,10 +147,15 @@ everwrk.out.tab
 ##  predDatWrk <- with(NH11,                      #everwrk ~ age_p + r_maritl
 ##                    expand.grid(age_p,
 ##                    r_maritl[everwrk != NA]))
+=======
+##   2. Predict the probability of working for each level of marital
+##      status.
+>>>>>>> origin/master
 
 ##   Note that the data is not perfectly clean and ready to be modeled. You
 ##   will need to clean up at least some of the variables before fitting
 ##   the model.
+<<<<<<< HEAD
 ##   predDatWrk has over a billion entries, NH11$everwrk could be cleaned by
 ##   removing the NAs in its vector, also im restricting it to the ages above (33 
 ##   & 66)
@@ -183,5 +189,8 @@ cbind(predDatFltd, predict(everwrk.fltd, type = "response",
 ##8	63	7 Never married	 0.12480343	0.007372330	
 ##9	33	5 Divorced	    0.10389473	0.010093135	
 #10	63	5 Divorced	    0.04586728	0.004509367
+=======
+
+>>>>>>> origin/master
 ```
 
