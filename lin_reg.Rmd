@@ -330,39 +330,13 @@ coef(summary(lm(csat ~ C(region, contr.helmert),
 ##   1. Add on to the regression equation that you created in exercise 1 by
 ##      generating an interaction term and testing the interaction.
 
- summary(lm(energy ~ metro + density, data = states.data))
-## Multiple R-squared:  0.1397,	Adjusted R-squared:  0.1031  # energy ~ metro + density
-## Multiple R-squared:  0.5962,	Adjusted R-squared:  0.5687  # energy ~ metro + green + waste
-## Multiple R-squared:  0.5939,	Adjusted R-squared:  0.5758  # energy ~ metro + green
-## Multiple R-squared:  0.6157,	Adjusted R-squared:   0.58   # energy ~ metro + density + green + waste
+ summary(lm(energy ~ metro + density * waste, data = states.data))
+density + green + waste
 
 ##   2. Try adding region to the model. Are there significant differences
 ##      across the four regions?
 
-summary(lm(energy ~ metro + density + region, data = states.data))
-## Call:
-##  lm(formula = energy ~ metro + density + region, data = states.data)
-##
-## Residuals:
-##   Min      1Q  Median      3Q     Max 
-## -139.29  -72.28  -32.57   14.73  542.63 
-##
-## Coefficients:
-##  Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)    536.4747    78.9979   6.791 2.32e-08 ***
-##  metro           -2.1447     1.1774  -1.822   0.0753 .  
-## density          0.0449     0.1409   0.319   0.7516    
-## regionN. East -150.0513    80.1997  -1.871   0.0680 .  
-## regionSouth    -28.1886    53.0806  -0.531   0.5981    
-## regionMidwest  -66.6310    55.7548  -1.195   0.2385    
-## ---
-##  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-##
-## Residual standard error: 137.9 on 44 degrees of freedom
-## (1 observation deleted due to missingness)
-## Multiple R-squared:  0.2153,	Adjusted R-squared:  0.1261 
-## F-statistic: 2.414 on 5 and 44 DF,  p-value: 0.05103
-
+summary(lm(energy ~ metro + density * waste + region, data = states.data))
 
 ```
 
