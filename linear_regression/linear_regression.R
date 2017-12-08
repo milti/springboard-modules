@@ -283,7 +283,7 @@ summary(lm(energy ~ metro + density + region, data = states.data))
 ## regionMidwest  -66.6310    55.7548  -1.195   0.2385    
 ## ---
 ##  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
+##
 ## Residual standard error: 137.9 on 44 degrees of freedom
 ## (1 observation deleted due to missingness)
 ## Multiple R-squared:  0.2153,	Adjusted R-squared:  0.1261 

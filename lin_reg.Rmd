@@ -367,7 +367,4 @@ summary(lm(energy ~ metro + density + region, data = states.data))
 ```
 
 
-```{r}
-##   2. Try adding region to the model. Are there significant differences
-##      across the four regions?
-```
+
