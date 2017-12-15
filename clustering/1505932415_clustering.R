@@ -12,8 +12,13 @@ head(wine)
 
 # Exercise 1: Remove the first column from the data and scale
 # it using the scale() function
+<<<<<<< HEAD
 wine.scaled <- wine[2:14]           # or wine.centered <- scale(wine[-1])
 wine.ctrd <- scale(wine.scaled, scale = FALSE)
+=======
+wine.scaled <- wine[2:14]
+wine.centered <- scale(wine.scaled, scale = FALSE)
+>>>>>>> origin/master
 
 # Now we'd like to cluster the data using K-Means. 
 # How do we decide how many clusters to use if you don't know that already?
@@ -33,7 +38,11 @@ wssplot <- function(data, nc=15, seed=1234){
 	                        ylab="Within groups sum of squares")
 	   }
 
+<<<<<<< HEAD
 wssplot(wine.ctrd)
+=======
+wssplot(wine.centered)
+>>>>>>> origin/master
 
 # Exercise 2:
 #   * How many clusters does this method suggest? _2_
@@ -45,7 +54,11 @@ wssplot(wine.ctrd)
 
 library(NbClust)
 set.seed(1234)
+<<<<<<< HEAD
 nc <- NbClust(wine.ctrd, min.nc=2, max.nc=15, method="kmeans")
+=======
+nc <- NbClust(wine.centered, min.nc=2, max.nc=15, method="kmeans")
+>>>>>>> origin/master
 barplot(table(nc$Best.n[1,]),
 	          xlab="Numer of Clusters", ylab="Number of Criteria",
 		            main="Number of Clusters Chosen by 26 Criteria")
@@ -64,13 +77,31 @@ barplot(table(nc$Best.n[1,]),
 # using this number of clusters. Output the result of calling kmeans()
 # into a variable fit.km
 
+<<<<<<< HEAD
 fit.km <- kmeans(wine.ctrd, 2, nstart = 25)
+=======
+fit.km <- kmeans(wine.centered, 2, nstart = 25)
+>>>>>>> origin/master
 
 # Now we want to evaluate how well this clustering does.
 
 # Exercise 5: using the table() function, show how the clusters in fit.km$clusters
 # compares to the actual wine types in wine$Type. Would you consider this a good
 # clustering?       _yes_
+
+table(fit.km$cluster)
+
+# 1   2 
+# 55 123 
+
+wine$Type
+
+##  [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+##  [39] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+##  [77] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+##  [115] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+##  [153] 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+##  Levels: 1 2 3
 
 table(fit.km$cluster)
 

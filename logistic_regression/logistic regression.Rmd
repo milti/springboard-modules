@@ -198,6 +198,7 @@ NH11 <- transform(NH11,
 
 mod.wk.age.mar <- glm(everwrk ~ age_p + r_maritl, data = NH11,
                       family = "binomial")
+<<<<<<< HEAD
 
 summary(mod.wk.age.mar)
 
@@ -206,3 +207,16 @@ summary(mod.wk.age.mar)
 library(effects)
 data.frame(Effect("r_maritl", mod.wk.age.mar))
 ```
+=======
+
+summary(mod.wk.age.mar)
+
+##    Predict the probability of working for each level of marital status.
+
+library(effects)
+data.frame(Effect("r_maritl", mod.wk.age.mar))
+```
+
+
+ 
+>>>>>>> origin/master
